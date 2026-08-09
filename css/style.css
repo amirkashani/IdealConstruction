@@ -1,11 +1,13 @@
-/* SETX Ideal Construction Group — simple Texas-friendly */
+/* SICG, LLC — Texas-friendly construction */
 
 :root {
   --cream: #f6f1e8;
   --sand: #e8dfd0;
   --white: #fffdf9;
-  --navy: #1e3a5f;
-  --navy-deep: #152a45;
+  --brand: #002395;
+  --brand-dark: #001862;
+  --navy: #002395;
+  --navy-deep: #001862;
   --rust: #b85c2a;
   --rust-dark: #9a4a22;
   --sage: #5a6b4f;
@@ -14,7 +16,7 @@
   --line: rgba(42, 38, 34, 0.12);
   --font-display: "Bitter", Georgia, serif;
   --font-body: "Source Sans 3", system-ui, sans-serif;
-  --header-h: 72px;
+  --header-h: 80px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -64,24 +66,14 @@ ul { list-style: none; }
 
 .logo {
   display: flex;
-  flex-direction: column;
-  line-height: 1.15;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.logo__mark {
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--rust);
-  text-transform: uppercase;
-}
-
-.logo__text {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--navy);
+.logo img {
+  height: 56px;
+  width: auto;
+  display: block;
 }
 
 .nav { display: none; gap: 1.5rem; }
@@ -95,7 +87,7 @@ ul { list-style: none; }
   transition: color 0.2s;
 }
 
-.nav a:hover { color: var(--rust); }
+.nav a:hover { color: var(--brand); }
 
 .btn--header {
   display: none;
@@ -104,13 +96,13 @@ ul { list-style: none; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 0.6rem 1rem;
-  background: var(--rust);
+  background: var(--brand);
   color: #fff;
   border-radius: 3px;
   transition: background 0.25s;
 }
 
-.btn--header:hover { background: var(--rust-dark); }
+.btn--header:hover { background: var(--brand-dark); }
 
 .nav-toggle {
   display: flex;
@@ -174,14 +166,14 @@ ul { list-style: none; }
 }
 
 .btn--primary {
-  background: var(--rust);
+  background: var(--brand);
   color: #fff;
-  border-color: var(--rust);
+  border-color: var(--brand);
 }
 
 .btn--primary:hover {
-  background: var(--rust-dark);
-  border-color: var(--rust-dark);
+  background: var(--brand-dark);
+  border-color: var(--brand-dark);
 }
 
 .btn--ghost {
@@ -206,8 +198,35 @@ ul { list-style: none; }
   align-items: center;
   padding-top: var(--header-h);
   background:
-    linear-gradient(135deg, rgba(21, 42, 69, 0.92) 0%, rgba(30, 58, 95, 0.85) 50%, rgba(184, 92, 42, 0.35) 100%),
+    linear-gradient(135deg, rgba(0, 35, 149, 0.94) 0%, rgba(0, 26, 98, 0.88) 55%, rgba(184, 92, 42, 0.25) 100%),
     url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&auto=format&fit=crop") center/cover no-repeat;
+}
+
+.hero__logo-wrap {
+  display: inline-block;
+  background: var(--white);
+  padding: 0.85rem 1.1rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.hero__logo {
+  height: clamp(100px, 18vw, 140px);
+  width: auto;
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .hero__overlay {
@@ -231,14 +250,6 @@ ul { list-style: none; }
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--sand);
-  margin-bottom: 1rem;
-}
-
-.hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight: 700;
-  line-height: 1.12;
   margin-bottom: 0.75rem;
 }
 
@@ -276,7 +287,7 @@ ul { list-style: none; }
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--rust);
+  color: var(--brand);
   margin-bottom: 0.5rem;
 }
 
@@ -351,7 +362,7 @@ ul { list-style: none; }
   content: "★";
   position: absolute;
   left: 0;
-  color: var(--rust);
+  color: var(--brand);
   font-size: 0.65rem;
   top: 0.35rem;
 }
@@ -361,8 +372,8 @@ ul { list-style: none; }
   margin-top: 1.25rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--rust);
-  border-bottom: 1px solid var(--rust);
+  color: var(--brand);
+  border-bottom: 1px solid var(--brand);
 }
 
 .about__social:hover { color: var(--navy); border-color: var(--navy); }
@@ -553,7 +564,7 @@ ul { list-style: none; }
 
 .contact__cta p { color: rgba(255, 255, 255, 0.8); margin-bottom: 1.25rem; }
 
-.contact .btn--primary { background: var(--rust); border-color: var(--rust); }
+.contact .btn--primary { background: var(--brand); border-color: var(--brand); }
 .contact .btn--primary:hover { background: #fff; color: var(--navy); border-color: #fff; }
 
 /* Footer */
@@ -569,6 +580,14 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+}
+
+.footer__logo {
+  height: 88px;
+  width: auto;
+  margin: 0 auto 0.5rem;
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
 }
 
 .footer__brand {
@@ -588,7 +607,7 @@ ul { list-style: none; }
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--rust);
+  color: var(--brand);
   margin-top: 0.25rem;
 }
 
