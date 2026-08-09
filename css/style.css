@@ -244,24 +244,14 @@ ul { list-style: none; }
   display: block;
 }
 
-.hero__photo--family,
-.hero__photo--cowgirl {
+.hero__photo--family {
   position: absolute;
   width: 38%;
   aspect-ratio: 3 / 4;
   border: 3px solid var(--white);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-}
-
-.hero__photo--family {
   bottom: 1rem;
   left: 1rem;
-}
-
-.hero__photo--cowgirl {
-  bottom: 1rem;
-  right: 1rem;
-  object-position: center 15%;
 }
 
 /* Texas portrait strip */
