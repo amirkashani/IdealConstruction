@@ -495,6 +495,47 @@ ul { list-style: none; }
   font-size: 1.05rem;
 }
 
+.about__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about__owner {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.about__owner img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+.about__owner figcaption {
+  padding: 1rem 1.25rem;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+
+.about__owner strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+
+.about__owner span {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
 .about__card {
   background: var(--cream);
   border: 1px solid var(--line);
