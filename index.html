@@ -9,13 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/logo.png" type="image/png" />
-  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/style.css?v=4" />
 </head>
 <body>
   <header class="header" id="header">
     <div class="header__inner">
       <a href="#home" class="logo">
-        <img src="assets/logo.png" alt="SICG, LLC" width="48" height="68" />
+        <img src="assets/logo.png" alt="SICG, LLC" class="logo__img" />
       </a>
       <nav class="nav" aria-label="Main">
         <a href="#home">Home</a>
@@ -41,18 +41,49 @@
   <main>
     <section class="hero" id="home">
       <div class="hero__overlay"></div>
-      <div class="container hero__content">
-        <div class="hero__logo-wrap">
-          <img src="assets/logo.png" alt="" class="hero__logo" width="160" height="226" />
+      <div class="hero__layout container">
+        <div class="hero__content">
+          <div class="hero__logo-wrap">
+            <img src="assets/logo.png" alt="" class="hero__logo logo__img" />
+          </div>
+          <p class="hero__kicker">Southeast Texas · Beaumont Area</p>
+          <h1 class="visually-hidden">SICG, LLC — SETX Ideal Construction &amp; Remodeling</h1>
+          <p class="hero__subtitle">SETX Ideal Construction &amp; Remodeling</p>
+          <p class="hero__tagline">Let's make the world a better place to live together!</p>
+          <p class="hero__lead">We provide residential and commercial clients with a wide array of construction services — from ground-up builds to remodels that help Texas families stay rooted in the home they love.</p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">Contact Us</a>
+            <a href="#projects" class="btn btn--ghost">See Our Work</a>
+          </div>
         </div>
-        <p class="hero__kicker">Southeast Texas · Beaumont Area</p>
-        <h1 class="visually-hidden">SICG, LLC — SETX Ideal Construction &amp; Remodeling</h1>
-        <p class="hero__subtitle">SETX Ideal Construction &amp; Remodeling</p>
-        <p class="hero__tagline">Let's make the world a better place to live together!</p>
-        <p class="hero__lead">We provide residential and commercial clients with a wide array of construction services — from ground-up builds to remodels that help Texas families stay rooted in the home they love.</p>
-        <div class="hero__actions">
-          <a href="#contact" class="btn btn--primary">Contact Us</a>
-          <a href="#projects" class="btn btn--ghost">See Our Work</a>
+        <div class="hero__photos" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1566758842471-415701494fbd?w=900&q=85&auto=format&fit=crop" alt="" class="hero__photo hero__photo--main" loading="eager" />
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&q=85&auto=format&fit=crop" alt="" class="hero__photo hero__photo--man" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&q=85&auto=format&fit=crop" alt="" class="hero__photo hero__photo--woman" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="texas-strip" aria-label="Texas pride">
+      <div class="container">
+        <div class="section-head section-head--center section-head--tight">
+          <span class="section-label">Southeast Texas</span>
+          <h2>Built for Texas Families</h2>
+          <p class="section-head__sub">Classic Texas strength, hospitality, and pride — the same values we bring to every job site.</p>
+        </div>
+        <div class="texas-strip__grid">
+          <figure class="texas-portrait">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=700&q=85&auto=format&fit=crop" alt="Texas gentleman in classic western style" loading="lazy" />
+            <figcaption>Texas craftsmanship</figcaption>
+          </figure>
+          <figure class="texas-portrait texas-portrait--featured">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=85&auto=format&fit=crop" alt="Friends enjoying life in Texas" loading="lazy" />
+            <figcaption>Neighbors &amp; community</figcaption>
+          </figure>
+          <figure class="texas-portrait">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=700&q=85&auto=format&fit=crop" alt="Texas woman with classic Southern warmth" loading="lazy" />
+            <figcaption>Texas hospitality</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -202,7 +233,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <img src="assets/logo.png" alt="SICG, LLC" class="footer__logo" width="100" height="141" />
+      <img src="assets/logo.png" alt="SICG, LLC" class="footer__logo logo__img" />
       <p class="footer__dba">SETX Ideal Construction &amp; Remodeling</p>
       <p class="footer__copy">© 2026 SICG, LLC. All rights reserved.</p>
       <p class="footer__tag">Proudly serving Southeast Texas</p>

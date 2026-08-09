@@ -70,9 +70,14 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
-.logo img {
-  height: 56px;
+.logo img,
+.logo__img {
+  height: var(--logo-h, 56px);
   width: auto;
+  max-width: none;
+  aspect-ratio: 723 / 1024;
+  object-fit: contain;
+  object-position: center;
   display: block;
 }
 
@@ -192,29 +197,116 @@ ul { list-style: none; }
 /* Hero */
 .hero {
   position: relative;
-  min-height: 85vh;
-  min-height: 85dvh;
-  display: flex;
-  align-items: center;
+  min-height: auto;
   padding-top: var(--header-h);
-  background:
-    linear-gradient(135deg, rgba(0, 35, 149, 0.94) 0%, rgba(0, 26, 98, 0.88) 55%, rgba(184, 92, 42, 0.25) 100%),
-    url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&auto=format&fit=crop") center/cover no-repeat;
+  background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%);
+}
+
+.hero__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.5rem 1.25rem 3.5rem;
 }
 
 .hero__logo-wrap {
   display: inline-block;
   background: var(--white);
-  padding: 0.85rem 1.1rem;
+  padding: 0.75rem 1rem;
   border-radius: 4px;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-.hero__logo {
-  height: clamp(100px, 18vw, 140px);
-  width: auto;
+.hero__logo,
+.hero .logo__img {
+  --logo-h: clamp(110px, 20vw, 150px);
+}
+
+.hero__photos {
+  position: relative;
+  min-height: 320px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero__photo {
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.hero__photo--main {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
   display: block;
+}
+
+.hero__photo--man,
+.hero__photo--woman {
+  position: absolute;
+  width: 38%;
+  aspect-ratio: 3 / 4;
+  border: 3px solid var(--white);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.hero__photo--man {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.hero__photo--woman {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* Texas portrait strip */
+.texas-strip {
+  padding: 4rem 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.section-head--tight { padding-top: 0; margin-bottom: 2rem; }
+
+.texas-strip__grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+.texas-portrait {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.texas-portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.texas-portrait figcaption {
+  padding: 0.85rem 1rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.texas-portrait--featured img {
+  aspect-ratio: 16 / 10;
+  object-position: center 30%;
 }
 
 .visually-hidden {
@@ -583,8 +675,7 @@ ul { list-style: none; }
 }
 
 .footer__logo {
-  height: 88px;
-  width: auto;
+  --logo-h: 88px;
   margin: 0 auto 0.5rem;
   filter: brightness(0) invert(1);
   opacity: 0.92;
@@ -615,6 +706,25 @@ ul { list-style: none; }
   .nav { display: flex; }
   .btn--header { display: inline-flex; }
   .nav-toggle { display: none; }
+
+  .hero__layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    padding: 3.5rem 1.25rem 4rem;
+  }
+
+  .hero__photos { min-height: 420px; }
+
+  .texas-strip__grid {
+    grid-template-columns: 1fr 1.4fr 1fr;
+    align-items: stretch;
+  }
+
+  .texas-portrait--featured img {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 280px;
+  }
 
   .about__grid { grid-template-columns: 1.2fr 0.8fr; }
   .services__grid { grid-template-columns: repeat(3, 1fr); }
