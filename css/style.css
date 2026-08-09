@@ -244,8 +244,8 @@ ul { list-style: none; }
   display: block;
 }
 
-.hero__photo--man,
-.hero__photo--woman {
+.hero__photo--family,
+.hero__photo--cowgirl {
   position: absolute;
   width: 38%;
   aspect-ratio: 3 / 4;
@@ -253,14 +253,15 @@ ul { list-style: none; }
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
-.hero__photo--man {
+.hero__photo--family {
   bottom: 1rem;
   left: 1rem;
 }
 
-.hero__photo--woman {
+.hero__photo--cowgirl {
   bottom: 1rem;
   right: 1rem;
+  object-position: center 15%;
 }
 
 /* Texas portrait strip */
@@ -306,7 +307,16 @@ ul { list-style: none; }
 
 .texas-portrait--featured img {
   aspect-ratio: 16 / 10;
-  object-position: center 30%;
+  object-position: center 20%;
+}
+
+.texas-strip__secondary {
+  margin-top: 1.25rem;
+}
+
+.texas-portrait--wide img {
+  aspect-ratio: 21 / 9;
+  object-position: center;
 }
 
 .visually-hidden {
