@@ -1,6 +1,6 @@
 # IdealConstruction
 
-Static website for **SETX Ideal Construction Group** — residential and commercial construction in Southeast Texas (Beaumont area).
+Static website for **SICG, LLC** (SETX Ideal Construction & Remodeling) — residential and commercial construction in Southeast Texas (Beaumont area).
 
 Rebuilt from the [archived site](https://web.archive.org/web/20240726135445/http://www.idealconstruction.group/).
 

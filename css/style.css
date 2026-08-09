@@ -242,6 +242,15 @@ ul { list-style: none; }
   margin-bottom: 0.75rem;
 }
 
+.hero__subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.5rem;
+}
+
 .hero__tagline {
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 2.5vw, 1.35rem);
@@ -347,6 +356,17 @@ ul { list-style: none; }
   top: 0.35rem;
 }
 
+.about__social {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--rust);
+  border-bottom: 1px solid var(--rust);
+}
+
+.about__social:hover { color: var(--navy); border-color: var(--navy); }
+
 /* Services */
 .services {
   padding: 5rem 0;
@@ -397,60 +417,85 @@ ul { list-style: none; }
   border-top: 1px solid var(--line);
 }
 
-.projects__grid {
+.projects__facebook {
   display: grid;
-  gap: 1.25rem;
+  gap: 2rem;
+  align-items: start;
 }
 
-.project-card {
-  margin: 0;
+.fb-embed-card {
+  background: var(--cream);
   border: 1px solid var(--line);
   border-radius: 4px;
-  overflow: hidden;
-  background: var(--cream);
+  padding: 1.5rem;
 }
 
-.project-card__img {
-  aspect-ratio: 16/10;
-  background-size: cover;
-  background-position: center;
-}
-
-.project-card__img--1 {
-  background-image: linear-gradient(rgba(30,58,95,0.2), rgba(30,58,95,0.2)),
-    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop");
-}
-
-.project-card__img--2 {
-  background-image: linear-gradient(rgba(30,58,95,0.2), rgba(30,58,95,0.2)),
-    url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80&auto=format&fit=crop");
-}
-
-.project-card__img--3 {
-  background-image: linear-gradient(rgba(30,58,95,0.2), rgba(30,58,95,0.2)),
-    url("https://images.unsplash.com/photo-1600047509806-2376ec7f3c8a?w=800&q=80&auto=format&fit=crop");
-}
-
-.project-card figcaption {
-  padding: 1rem 1.25rem;
+.fb-embed-card h3 {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: var(--navy);
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-.projects__note {
+.fb-embed-card__hint {
   text-align: center;
-  margin-top: 2rem;
   color: var(--muted);
   font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
-.projects__note a {
-  color: var(--rust);
-  font-weight: 600;
-  border-bottom: 1px solid var(--rust);
+.fb-embed-wrap,
+.fb-page-wrap {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #fff;
+  min-height: 200px;
 }
+
+.fb-embed-wrap iframe {
+  max-width: 100%;
+}
+
+.btn--fb {
+  display: flex;
+  width: 100%;
+  margin-top: 1.25rem;
+  background: #1877f2;
+  color: #fff;
+  border-color: #1877f2;
+  text-align: center;
+}
+
+.btn--fb:hover {
+  background: #166fe5;
+  border-color: #166fe5;
+}
+
+.btn--fb-outline {
+  display: flex;
+  width: 100%;
+  margin-top: 0.75rem;
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn--fb-outline:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+}
+
+.contact__fb-link {
+  color: var(--sand);
+  font-weight: 600;
+  border-bottom: 1px solid var(--sand);
+}
+
+.contact__fb-link:hover { color: #fff; border-color: #fff; }
 
 /* Contact */
 .contact {
@@ -508,13 +553,6 @@ ul { list-style: none; }
 
 .contact__cta p { color: rgba(255, 255, 255, 0.8); margin-bottom: 1.25rem; }
 
-.contact__hint {
-  margin-top: 1rem !important;
-  font-size: 0.8rem !important;
-  opacity: 0.55;
-  font-style: italic;
-}
-
 .contact .btn--primary { background: var(--rust); border-color: var(--rust); }
 .contact .btn--primary:hover { background: #fff; color: var(--navy); border-color: #fff; }
 
@@ -536,7 +574,14 @@ ul { list-style: none; }
 .footer__brand {
   font-family: var(--font-display);
   font-weight: 600;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.footer__dba {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  opacity: 0.65;
 }
 
 .footer__tag {
@@ -554,7 +599,7 @@ ul { list-style: none; }
 
   .about__grid { grid-template-columns: 1.2fr 0.8fr; }
   .services__grid { grid-template-columns: repeat(3, 1fr); }
-  .projects__grid { grid-template-columns: repeat(3, 1fr); }
+  .projects__facebook { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .contact__grid { grid-template-columns: 1fr 1fr; align-items: start; }
 }
 
